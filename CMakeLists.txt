@@ -22,7 +22,7 @@ include(${CPM_DOWNLOAD_LOCATION})
 CPMAddPackage(
     NAME nameof
     GITHUB_REPOSITORY Neargye/nameof
-    GIT_TAG 0.9.4
+    GIT_TAG v0.9.4
 )
 
 # ---- Create executable ----
