@@ -108,8 +108,8 @@ int main() {
 
   // Nameof enum flags.
   auto flag = static_cast<AnimalFlags>(AnimalFlags::CanFly | AnimalFlags::EatsFish);
-  std::cout << nameof::nameof_enum_flag(flag) << std::endl; // 'CanFly|EatsFish'
-  std::cout << NAMEOF_ENUM_FLAG(flag) << std::endl; // 'CanFly|EatsFish'
+  std::cout << nameof::nameof_enum(flag) << std::endl; // 'CanFly|EatsFish'
+  std::cout << NAMEOF_ENUM(flag) << std::endl; // 'CanFly|EatsFish'
 #endif
 
   // Nameof.
@@ -137,15 +137,12 @@ int main() {
   std::cout << NAMEOF_TYPE(const Long::LL&) << std::endl; // 'Long::LL'
   std::cout << nameof::nameof_full_type<const Long::LL&>() << std::endl; // 'const Long::LL &'
   std::cout << NAMEOF_FULL_TYPE(const Long::LL&) << std::endl; // 'const Long::LL &'
-  std::cout << NAMEOF_SHORT_TYPE(const Long::LL&) << std::endl; // 'LL'
-  std::cout << NAMEOF_SHORT_TYPE(const SomeClass<int>&) << std::endl; // 'SomeClass'
 
   // Nameof variable type.
   std::cout << nameof::nameof_type<decltype(structvar)>() << std::endl; // 'SomeStruct'
   std::cout << NAMEOF_TYPE_EXPR(structvar) << std::endl; // 'SomeStruct'
   std::cout << NAMEOF_TYPE_EXPR(std::declval<const SomeClass<int>>()) << std::endl; // 'SomeClass<int>'
   std::cout << NAMEOF_FULL_TYPE_EXPR(std::declval<const SomeClass<int>>()) << std::endl; // 'const SomeClass<int> &&'
-  std::cout << NAMEOF_SHORT_TYPE_EXPR(std::declval<const SomeClass<int>>()) << std::endl; // 'SomeClass'
 
   // Nameof macro.
   std::cout << NAMEOF(__LINE__) << std::endl; // '__LINE__'
